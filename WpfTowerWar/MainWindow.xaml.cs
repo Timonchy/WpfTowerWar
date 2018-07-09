@@ -24,5 +24,23 @@ namespace WpfTowerWar
         {
             InitializeComponent();
         }
+        
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            List<BuildPlase> bpList = new List<BuildPlase>();
+            bpList.Add(new BuildPlase(10, 10, true));
+            bpList.Add(new BuildPlase(60, 20, true));
+            bpList.Add(new BuildPlase(300, 10, true));
+            bpList.Add(new BuildPlase(20, 300, true));
+            bpList.Add(new BuildPlase(20, 150, true));
+            bpList.Add(new BuildPlase(20, 400, true));
+
+            foreach (BuildPlase bp in bpList)
+            {
+                bp.Draw();
+                
+            }
+        }
     }
 }
+
