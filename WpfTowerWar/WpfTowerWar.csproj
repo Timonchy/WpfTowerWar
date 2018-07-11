@@ -56,8 +56,8 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="BuildPlase.cs" />
+    <Compile Include="Enemy.cs" />
     <Compile Include="Figures.cs" />
-    <Compile Include="FigureTypeList.cs" />
     <Compile Include="Tower.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>

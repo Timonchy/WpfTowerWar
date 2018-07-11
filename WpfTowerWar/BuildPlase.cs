@@ -14,6 +14,7 @@ namespace WpfTowerWar
     {
         
         public bool free;
+
         public BuildPlase(int _x, int _y, bool _free)
         {
             x = _x;

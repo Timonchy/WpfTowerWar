@@ -26,7 +26,7 @@ namespace WpfTowerWar
         {
             InitializeComponent();
         }
-        
+
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
             bpList.Add(new BuildPlase(10, 10, true));
@@ -38,13 +38,18 @@ namespace WpfTowerWar
 
             foreach (BuildPlase bp in bpList)
             {
-                bp.Draw(CanvasMap);                
+                bp.Draw(CanvasMap);
             }
         }
 
         private void button_Click(object sender, RoutedEventArgs e)
         {
-            Canvas.SetLeft(bpList[2]. as UIElement , 400);
+            bpList[1].Move(CanvasMap, 0, 250, 250);
+        }
+
+        private void myCanvas_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            
         }
     }
 }

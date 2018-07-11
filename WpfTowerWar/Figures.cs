@@ -14,7 +14,7 @@ namespace WpfTowerWar
         public int x;
         public int y;
 
-        public virtual void Draw(Canvas cnvs, int radius = 40)
+        public virtual void Draw(Canvas cnvs, int radius = 30)
         {
             var fig = new Ellipse();
             fig.Width = radius;
@@ -23,6 +23,12 @@ namespace WpfTowerWar
             Canvas.SetLeft(fig, x);
             Canvas.SetTop(fig, y);
             cnvs.Children.Add(fig);
+        }
+
+        public void Move(Canvas cnvs, int itemNom, int toX, int toY)
+        {
+            Canvas.SetLeft(cnvs.Children[itemNom], toX);
+            Canvas.SetTop(cnvs.Children[itemNom], toY);
         }
     }
 }
