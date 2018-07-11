@@ -20,6 +20,8 @@ namespace WpfTowerWar
     /// </summary>
     public partial class MainWindow : Window
     {
+        List<BuildPlase> bpList = new List<BuildPlase>();
+
         public MainWindow()
         {
             InitializeComponent();
@@ -27,7 +29,6 @@ namespace WpfTowerWar
         
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            List<BuildPlase> bpList = new List<BuildPlase>();
             bpList.Add(new BuildPlase(10, 10, true));
             bpList.Add(new BuildPlase(60, 20, true));
             bpList.Add(new BuildPlase(300, 10, true));
@@ -39,6 +40,11 @@ namespace WpfTowerWar
             {
                 bp.Draw(CanvasMap);                
             }
+        }
+
+        private void button_Click(object sender, RoutedEventArgs e)
+        {
+            Canvas.SetLeft(bpList[2]. as UIElement , 400);
         }
     }
 }

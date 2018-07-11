@@ -10,12 +10,11 @@ using System.Windows.Shapes;
 
 namespace WpfTowerWar
 {
-    class BuildPlase
+    class BuildPlase:Figures
     {
-        private int x;
-        private int y;
-        private bool free;
-
+        
+        public bool free;
+        public Figures fig;
         public BuildPlase(int _x, int _y, bool _free)
         {
             x = _x;
@@ -23,16 +22,15 @@ namespace WpfTowerWar
             free = _free;
         }
 
-        public void Draw(Canvas cnvs)
+        public override void Draw(Canvas cnvs, int radius = 40)
         {
-            var rcngl =  new Rectangle();
-            rcngl.Width = 30;
-            rcngl.Height = 30;
-            rcngl.Fill = Brushes.LightGreen;
-            Canvas.SetLeft(rcngl, x);
-            Canvas.SetTop(rcngl,y);
-
-            cnvs.Children.Add(rcngl);
+            var fig = new Rectangle();
+            fig.Width = radius;
+            fig.Height = radius;
+            fig.Fill = Brushes.LightGreen;
+            Canvas.SetLeft(fig, x);
+            Canvas.SetTop(fig, y);
+            cnvs.Children.Add(fig);
         }
     }
 }
