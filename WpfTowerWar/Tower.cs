@@ -16,7 +16,7 @@ namespace WpfTowerWar
         private Point p;
         private int demage;
 
-        Tower(int _lvl, int _x, int _y, int _damege)
+        public Tower(int _lvl, int _x, int _y, int _damege)
         {
             lvl = _lvl;
             x = _x;

@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Shapes;
 
@@ -28,9 +29,20 @@ namespace WpfTowerWar
             fig.Width = radius;
             fig.Height = radius;
             fig.Fill = Brushes.LightGreen;
+            fig.Tag = "BuildPlase";
+            //fig.MouseLeftButtonDown += rect_MouseLeftButtonDown;
             Canvas.SetLeft(fig, x);
             Canvas.SetTop(fig, y);
             cnvs.Children.Add(fig);
+        }
+
+        void rect_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            //var rect = sender as System.Windows.Shapes.Rectangle;
+            //// do it!!!!!!!!!!!!!!!!!!!
+            //var element = rect.InputHitTest(e.GetPosition(rect)) as UIElement;
+            //if(element != null)
+            //    MessageBox.Show("BuildPlase!");
         }
     }
 }

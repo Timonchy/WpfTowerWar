@@ -21,6 +21,7 @@ namespace WpfTowerWar
     public partial class MainWindow : Window
     {
         List<BuildPlase> bpList = new List<BuildPlase>();
+        List<Tower> tList = new List<Tower>();
 
         public MainWindow()
         {
@@ -29,7 +30,7 @@ namespace WpfTowerWar
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            bpList.Add(new BuildPlase(10, 10, true));
+            bpList.Add(new BuildPlase(0, 0, true));
             bpList.Add(new BuildPlase(60, 20, true));
             bpList.Add(new BuildPlase(300, 10, true));
             bpList.Add(new BuildPlase(20, 300, true));
@@ -40,17 +41,43 @@ namespace WpfTowerWar
             {
                 bp.Draw(CanvasMap);
             }
+
+            tList.Add(new Tower(1, 50, 200, 50));
+            foreach (var tower in tList)
+            {
+                tower.Draw(CanvasMap);
+            }
         }
 
         private void button_Click(object sender, RoutedEventArgs e)
         {
-            bpList[1].Move(CanvasMap, 0, 250, 250);
+
         }
 
-        private void myCanvas_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        private void canvas_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
-            
+            foreach (UIElement element in CanvasMap.Children)
+            {
+                var element1 = element.InputHitTest(e.GetPosition(element)) as UIElement;
+                if (element1 != null)
+                {
+                    int index = CanvasMap.Children.IndexOf(element);
+                    var elemType = "";
+                    if (CanvasMap.Children[index] is Rectangle)
+                    {
+                        elemType = (element as Rectangle).Tag.ToString();
+                    }
+                    else
+                    {
+                        elemType = (element as Ellipse).Tag.ToString();
+                    }
+                    MessageBox.Show(elemType + " Index =" + index + 
+                        " Left = " + Canvas.GetLeft(CanvasMap.Children[index]) + 
+                        " Top = " + Canvas.GetTop(CanvasMap.Children[index]));
+                }
+            }
         }
     }
 }
+
 

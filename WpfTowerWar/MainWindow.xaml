@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:WpfTowerWar"
         mc:Ignorable="d"
         Title="MainWindow" Height="600" Width="500" Loaded="Window_Loaded">
-    <Canvas x:Name="CanvasMap" MouseLeftButtonDown="myCanvas_MouseLeftButtonDown">
+    <Canvas x:Name="CanvasMap" MouseLeftButtonDown="canvas_MouseLeftButtonDown">
         <Button x:Name="button" Content="Button" Canvas.Left="208" Canvas.Top="317" Width="75" Click="button_Click"/>
     </Canvas>
 </Window>

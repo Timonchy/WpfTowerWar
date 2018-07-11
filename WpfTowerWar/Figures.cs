@@ -1,9 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.Remoting.Channels;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Shapes;
 
@@ -20,6 +23,9 @@ namespace WpfTowerWar
             fig.Width = radius;
             fig.Height = radius;
             fig.Fill = Brushes.LightGreen;
+            //fig.MouseLeftButtonDown += el_MouseLeftButtonDown;
+            if (radius == 30)
+                fig.Tag = "Tower";
             Canvas.SetLeft(fig, x);
             Canvas.SetTop(fig, y);
             cnvs.Children.Add(fig);
@@ -30,5 +36,12 @@ namespace WpfTowerWar
             Canvas.SetLeft(cnvs.Children[itemNom], toX);
             Canvas.SetTop(cnvs.Children[itemNom], toY);
         }
+
+        //void el_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        //{
+        //    var el = sender as System.Windows.Shapes.Ellipse;
+        //    // do it!!!!!!!!!!!!!!!!!!!
+        //    MessageBox.Show("Ellipse mother Fucker!");
+        //}
     }
 }
