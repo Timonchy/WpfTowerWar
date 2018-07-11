@@ -37,8 +37,7 @@ namespace WpfTowerWar
 
             foreach (BuildPlase bp in bpList)
             {
-                bp.Draw();
-                
+                bp.Draw(CanvasMap);                
             }
         }
     }

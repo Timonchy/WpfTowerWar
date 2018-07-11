@@ -4,6 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Media;
+using System.Windows.Shapes;
 
 namespace WpfTowerWar
 {
@@ -20,9 +23,16 @@ namespace WpfTowerWar
             free = _free;
         }
 
-        public void Draw()
+        public void Draw(Canvas cnvs)
         {
-            
+            var rcngl =  new Rectangle();
+            rcngl.Width = 30;
+            rcngl.Height = 30;
+            rcngl.Fill = Brushes.LightGreen;
+            Canvas.SetLeft(rcngl, x);
+            Canvas.SetTop(rcngl,y);
+
+            cnvs.Children.Add(rcngl);
         }
     }
 }

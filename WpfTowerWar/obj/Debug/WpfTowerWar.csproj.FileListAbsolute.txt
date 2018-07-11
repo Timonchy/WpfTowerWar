@@ -1,1 +1,14 @@
 E:\VisualS\Projects\WpfTowerWar\WpfTowerWar\bin\Debug\WpfTowerWar.exe.config
+E:\VisualS\Projects\WpfTowerWar\WpfTowerWar\bin\Debug\WpfTowerWar.exe
+E:\VisualS\Projects\WpfTowerWar\WpfTowerWar\bin\Debug\WpfTowerWar.pdb
+E:\VisualS\Projects\WpfTowerWar\WpfTowerWar\obj\Debug\WpfTowerWar.csprojResolveAssemblyReference.cache
+E:\VisualS\Projects\WpfTowerWar\WpfTowerWar\obj\Debug\MainWindow.g.cs
+E:\VisualS\Projects\WpfTowerWar\WpfTowerWar\obj\Debug\App.g.cs
+E:\VisualS\Projects\WpfTowerWar\WpfTowerWar\obj\Debug\WpfTowerWar_MarkupCompile.cache
+E:\VisualS\Projects\WpfTowerWar\WpfTowerWar\obj\Debug\WpfTowerWar_MarkupCompile.lref
+E:\VisualS\Projects\WpfTowerWar\WpfTowerWar\obj\Debug\MainWindow.baml
+E:\VisualS\Projects\WpfTowerWar\WpfTowerWar\obj\Debug\WpfTowerWar.g.resources
+E:\VisualS\Projects\WpfTowerWar\WpfTowerWar\obj\Debug\WpfTowerWar.Properties.Resources.resources
+E:\VisualS\Projects\WpfTowerWar\WpfTowerWar\obj\Debug\WpfTowerWar.csproj.GenerateResource.Cache
+E:\VisualS\Projects\WpfTowerWar\WpfTowerWar\obj\Debug\WpfTowerWar.exe
+E:\VisualS\Projects\WpfTowerWar\WpfTowerWar\obj\Debug\WpfTowerWar.pdb
