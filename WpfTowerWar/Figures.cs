@@ -22,10 +22,24 @@ namespace WpfTowerWar
             var fig = new Ellipse();
             fig.Width = radius;
             fig.Height = radius;
-            fig.Fill = Brushes.LightGreen;
+            
             //fig.MouseLeftButtonDown += el_MouseLeftButtonDown;
             if (radius == 30)
+            {
                 fig.Tag = "Tower";
+                fig.Fill = Brushes.Blue;
+            }
+            else if (radius == 20)
+            {
+                fig.Tag = "Enemy";
+                fig.Fill = Brushes.Red;
+            }
+            else if (radius == 5)
+            {
+                fig.Tag = "Bulet";
+                fig.Fill = Brushes.DarkRed;
+            }
+
             Canvas.SetLeft(fig, x);
             Canvas.SetTop(fig, y);
             cnvs.Children.Add(fig);

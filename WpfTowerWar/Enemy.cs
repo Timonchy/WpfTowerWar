@@ -10,17 +10,13 @@ namespace WpfTowerWar
 {
     class Enemy:Figures
     {
-        private int HP;
+        public int HP;
+        public int speed;
 
         Enemy(int _x, int _y)
         {
             x = _x;
             y = _y;
-        }
-
-        public void Move(int toX, int toY, int speed)
-        {
-            
         }
     }
 }

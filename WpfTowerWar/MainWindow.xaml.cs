@@ -51,7 +51,7 @@ namespace WpfTowerWar
 
         private void button_Click(object sender, RoutedEventArgs e)
         {
-
+            Close();
         }
 
         private void canvas_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
