@@ -30,17 +30,9 @@ namespace WpfTowerWar
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            bpList.Add(new BuildPlase(0, 0, true));
-            bpList.Add(new BuildPlase(60, 20, true));
-            bpList.Add(new BuildPlase(300, 10, true));
-            bpList.Add(new BuildPlase(20, 300, true));
-            bpList.Add(new BuildPlase(20, 150, true));
-            bpList.Add(new BuildPlase(20, 400, true));
 
-            foreach (BuildPlase bp in bpList)
-            {
-                bp.Draw(CanvasMap);
-            }
+            var lm = new LevelMaker();
+            lm.MakeLvl(CanvasMap, this.Width, this.Height, 40, bpList);
 
             tList.Add(new Tower(1, 50, 200, 50));
             foreach (var tower in tList)
@@ -58,24 +50,47 @@ namespace WpfTowerWar
         {
             foreach (UIElement element in CanvasMap.Children)
             {
-                var element1 = element.InputHitTest(e.GetPosition(element)) as UIElement;
+                VisualTreeHelper.HitTest(this, null, new HitTestResultCallback(myCallback), new PointHitTestParameters(e.GetPosition(element)));
+
+                //var element1 = element.InputHitTest(e.GetPosition(element)) as UIElement;
+                var element1 = VisualTreeHelper.HitTest(element, e.GetPosition(element));
+                var hitResultsList = new List<HitTestResult>();
                 if (element1 != null)
                 {
                     int index = CanvasMap.Children.IndexOf(element);
                     var elemType = "";
+                    if(CanvasMap.Children[index] is Ellipse)
+                    {
+                        elemType = (element as Ellipse).Tag.ToString();
+                    }
+
                     if (CanvasMap.Children[index] is Rectangle)
                     {
                         elemType = (element as Rectangle).Tag.ToString();
                     }
-                    else
-                    {
-                        elemType = (element as Ellipse).Tag.ToString();
-                    }
-                    MessageBox.Show(elemType + " Index =" + index + 
+                    MessageBox.Show(elemType + " Index = " + index + 
                         " Left = " + Canvas.GetLeft(CanvasMap.Children[index]) + 
                         " Top = " + Canvas.GetTop(CanvasMap.Children[index]));
                 }
             }
+        }
+
+        public HitTestResultBehavior myCallback(HitTestResult result)
+        {
+            if (result.VisualHit.GetType() == typeof(DrawingVisual))
+            {
+                if (((DrawingVisual)result.VisualHit).Opacity == 1.0)
+                {
+                    ((DrawingVisual)result.VisualHit).Opacity = 0.4;
+                }
+                else
+                {
+                    ((DrawingVisual)result.VisualHit).Opacity = 1.0;
+                }
+            }
+
+            // Stop the hit test enumeration of objects in the visual tree.
+            return HitTestResultBehavior.Stop;
         }
     }
 }

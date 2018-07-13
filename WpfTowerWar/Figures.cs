@@ -28,16 +28,19 @@ namespace WpfTowerWar
             {
                 fig.Tag = "Tower";
                 fig.Fill = Brushes.Blue;
+                Panel.SetZIndex(fig,1);
             }
             else if (radius == 20)
             {
                 fig.Tag = "Enemy";
                 fig.Fill = Brushes.Red;
+                Panel.SetZIndex(fig, 2);
             }
             else if (radius == 5)
             {
                 fig.Tag = "Bulet";
                 fig.Fill = Brushes.DarkRed;
+                Panel.SetZIndex(fig, 3);
             }
 
             Canvas.SetLeft(fig, x);

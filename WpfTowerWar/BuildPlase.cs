@@ -28,6 +28,7 @@ namespace WpfTowerWar
             var fig = new Rectangle();
             fig.Width = radius;
             fig.Height = radius;
+            fig.Stroke = Brushes.Black;
             fig.Fill = Brushes.LightGreen;
             fig.Tag = "BuildPlase";
             //fig.MouseLeftButtonDown += rect_MouseLeftButtonDown;
